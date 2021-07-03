@@ -1,5 +1,5 @@
 <li class="text-trueGray-500 hover:bg-sky-400 hover:text-white">
-    <a href="/" class="py-2 px-4 text-md flex items-center">
+    <a href="{{ route('home') }}" class="py-2 px-4 text-md flex items-center">
         <span class="flex justify-center w-9">
             <i class="far fa-hospital"></i>
         </span>

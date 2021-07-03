@@ -1,5 +1,4 @@
 <x-app-layout>
-
     <section class="bg-cover" style="background-image: url({{ asset('img/home/laboratory-2815641_1280.jpg')}})">
         <div class="container py-32 h-full">
             <div class="w-full md:w-3/4 lg:w-1/2">
@@ -88,7 +87,4 @@
             @endforeach
         </div>
     </section>
-
-
-
 </x-app-layout>

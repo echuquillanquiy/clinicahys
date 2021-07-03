@@ -11,6 +11,6 @@ class Requirement extends Model
     protected $fillable = ['name', 'work_id'];
 
     public function works(){
-        return $this->hasMany(Work::class);
+        return $this->belongsTo(Work::class);
     }
 }

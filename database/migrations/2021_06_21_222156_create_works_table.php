@@ -18,10 +18,12 @@ class CreateWorksTable extends Migration
             $table->id();
 
             $table->string('title');
-            $table->string('subtitile');
+            $table->string('subtitle');
             $table->string('slug');
             $table->text('description');
             $table->enum('status', [Work::BORRADOR, Work::PUBLICADO])->default(Work::BORRADOR);
+            $table->date('start');
+            $table->date('end');
 
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('category_id');

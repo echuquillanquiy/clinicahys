@@ -29,8 +29,8 @@ class Work extends Model
     }
 
     //RELACION UNO A MUCHOS INVERSA
-    public function requirement(){
-        return $this->belongsTo(Requirement::class);
+    public function requirements(){
+        return $this->hasMany(Requirement::class);
     }
 
     public function interviewer(){

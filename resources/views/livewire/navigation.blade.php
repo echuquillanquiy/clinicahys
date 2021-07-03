@@ -12,11 +12,11 @@
             </span>
         </a>
 
-        <div class="flex-1 hidden md:block">
-            @livewire('search')
+        <div class="hidden lg:block">
+            <x-menu-2 />
         </div>
 
-        <div class="mx-4 hidden md:block">
+        <div class="mx-2 hidden md:block">
             <x-social />
         </div>
 
@@ -36,7 +36,11 @@
                         </div>
 
                         <x-jet-dropdown-link href="{{ route('profile.show') }}">
-                            {{ __('Profile') }}
+                            Perfil
+                        </x-jet-dropdown-link>
+
+                        <x-jet-dropdown-link href="{{ route('entrevistador.works.index') }}">
+                            Entrevistador
                         </x-jet-dropdown-link>
 
                         <div class="border-t border-gray-100"></div>
@@ -243,6 +247,13 @@
                         <i class="far fa-address-card"></i>
                     </span>
                     Perfil
+                </a>
+
+                <a href="{{ route('entrevistador.works.index') }}" class="py-2 px-4 text-md flex items-center text-trueGray-500 hover:bg-sky-400 hover:text-white">
+                    <span class="flex justify-center w-9">
+                        <i class="fas fa-user-tag text-red-500"></i>
+                    </span>
+                    Entrevistador
                 </a>
 
                 <a href=""
