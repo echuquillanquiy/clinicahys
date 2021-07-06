@@ -7,6 +7,13 @@
 @stop
 
 @section('content')
+
+    @if(session('info'))
+        <div class="alert alert-primary" role="alert">
+            <strong>Éxito!</strong> {{ session('info') }}
+        </div>
+    @endif
+
     <div class="card">
         <div class="card-header">
             <a class="btn btn-primary" href="{{ route('admin.roles.create') }}">Crear Rol</a>

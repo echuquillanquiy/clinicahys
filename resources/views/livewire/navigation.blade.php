@@ -39,9 +39,11 @@
                             Perfil
                         </x-jet-dropdown-link>
 
-                        <x-jet-dropdown-link href="{{ route('entrevistador.works.index') }}">
-                            Entrevistador
-                        </x-jet-dropdown-link>
+                        @can('Leer trabajos')
+                            <x-jet-dropdown-link href="{{ route('entrevistador.works.index') }}">
+                                Entrevistador
+                            </x-jet-dropdown-link>
+                        @endcan
 
                         <div class="border-t border-gray-100"></div>
 
@@ -249,12 +251,14 @@
                     Perfil
                 </a>
 
-                <a href="{{ route('entrevistador.works.index') }}" class="py-2 px-4 text-md flex items-center text-trueGray-500 hover:bg-sky-400 hover:text-white">
-                    <span class="flex justify-center w-9">
-                        <i class="fas fa-user-tag text-red-500"></i>
-                    </span>
-                    Entrevistador
-                </a>
+                @can('Leer trabajos')
+                    <a href="{{ route('entrevistador.works.index') }}" class="py-2 px-4 text-md flex items-center text-trueGray-500 hover:bg-sky-400 hover:text-white">
+                        <span class="flex justify-center w-9">
+                            <i class="fas fa-user-tag text-red-500"></i>
+                        </span>
+                        Entrevistador
+                    </a>
+                @endcan
 
                 <a href=""
                    onclick="event.preventDefault();
