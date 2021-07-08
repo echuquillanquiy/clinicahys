@@ -1,8 +1,8 @@
 <?php
 
-use App\Http\Livewire\EntrevistadorWorks;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Entrevistador\WorkController;
 
 Route::redirect('', 'entrevistador/works');
 
-Route::get('works', EntrevistadorWorks::class)->middleware('can:Leer trabajos')->name('works.index');
+Route::resource('works',WorkController::class)->names('works');

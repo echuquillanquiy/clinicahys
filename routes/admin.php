@@ -6,7 +6,7 @@ use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('', [HomeController::class, 'index'])->name('home');
+Route::get('', [HomeController::class, 'index'])->name('home')->middleware('can:Ver dashboard');
 
 Route::resource('roles', RoleController::class)->names('roles');
 

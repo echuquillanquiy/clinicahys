@@ -1,7 +1,11 @@
 @props(['work'])
 
 <article class="card">
-    <img class="h-64 w-full object-cover" src="{{ Storage::url($work->image->url) }}" alt="{{ $work->title }}">
+    @isset($work->image)
+        <img class="h-64 w-full object-cover" src="{{ Storage::url($work->image->url) }}" alt="{{ $work->title }}">
+    @else
+        <img id="picture" class="w-full h-64 object-cover object-center" src="https://images.pexels.com/photos/40992/man-iraq-men-portrait-40992.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
+    @endisset
 
     <div class="card-body">
         <h1 class="card-title">{{ Str::limit($work->title, 40) }}</h1>

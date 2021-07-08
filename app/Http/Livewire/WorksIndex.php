@@ -9,7 +9,7 @@ use App\Models\Work;
 use Livewire\Component;
 use Livewire\WithPagination;
 
-class WorkIndex extends Component
+class WorksIndex extends Component
 {
     use WithPagination;
 

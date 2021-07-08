@@ -3,7 +3,11 @@
     <section class="bg-gray-700 py-12 mb-6">
         <div class="container grid grid-cols-1 lg:grid-cols-2 gap-6">
             <figure>
-                <img src="{{ Storage::url( $work->image->url) }}" class="h-60 w-full object-cover">
+                @isset($work->image)
+                    <img src="{{ Storage::url( $work->image->url) }}" class="h-60 w-full object-cover">
+                @else
+                    <img id="picture" class="w-full h-60 object-cover object-center" src="https://images.pexels.com/photos/40992/man-iraq-men-portrait-40992.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
+                @endisset
             </figure>
 
             <div class="text-white">
@@ -27,7 +31,7 @@
             <section class="card mb-4">
                 <div class="card-body">
                     <h1 class="font-bold text-2xl mb-2">Descripción</h1>
-                    <p>{{ $work->description }}</p>
+                    <p>{!! $work->description !!}</p>
                 </div>
             </section>
 

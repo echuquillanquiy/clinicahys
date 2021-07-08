@@ -33,21 +33,26 @@
                         <tr>
                             <td>{{ $role->id }}</td>
                             <td>{{ $role->name }}</td>
-                            <td width="10px">
-                                <a class="btn btn-secondary" href="{{ route('admin.roles.edit', $role) }}">
-                                    Editar
-                                </a>
-                            </td>
-                            <td width="10px">
-                                <form action="{{ route('admin.roles.destroy', $role) }}" method="POST">
-                                    @method('delete')
-                                    @csrf
+                            @can('Editar role')
+                                <td width="10px">
+                                    <a class="btn btn-secondary" href="{{ route('admin.roles.edit', $role) }}">
+                                        Editar
+                                    </a>
+                                </td>
+                            @endcan
 
-                                    <button class="btn btn-danger" type="submit">
-                                        Eliminar
-                                    </button>
-                                </form>
-                            </td>
+                            @can('Eliminar role')
+                                <td width="10px">
+                                    <form action="{{ route('admin.roles.destroy', $role) }}" method="POST">
+                                        @method('delete')
+                                        @csrf
+
+                                        <button class="btn btn-danger" type="submit">
+                                            Eliminar
+                                        </button>
+                                    </form>
+                                </td>
+                            @endcan
                         </tr>
                     @empty
                         <td colspan="4" class="text-danger">No hay ningún rol registrado.</td>

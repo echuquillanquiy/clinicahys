@@ -22,6 +22,8 @@ class DatabaseSeeder extends Seeder
         Storage::makeDirectory('public/clients');
         Storage::makeDirectory('public/works');
 
+        $this->call(PermissionSeeder::class);
+        $this->call(RoleSeeder::class);
         $this->call(UserSeeder::class);
         $this->call(QuotationSeeder::class);
         $this->call(ServiceSeeder::class);
