@@ -4,7 +4,7 @@
         <div class="container grid grid-cols-1 lg:grid-cols-2 gap-6">
             <figure>
                 @isset($work->image)
-                    <img src="{{ Storage::url( $work->image->url) }}" class="h-60 w-full object-cover">
+                    <img src="{{ Storage::url( $work->image->url) }}" class="h-72 w-full object-cover object-center rounded-lg">
                 @else
                     <img id="picture" class="w-full h-60 object-cover object-center" src="https://images.pexels.com/photos/40992/man-iraq-men-portrait-40992.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
                 @endisset

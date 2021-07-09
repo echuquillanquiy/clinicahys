@@ -55,6 +55,7 @@ class WorkController extends Controller
             'type_id' => 'required',
             'start' => 'required',
             'end' => 'required',
+            'file' => 'image'
         ]);
 
         $work = Work::create($request->all());
@@ -117,6 +118,7 @@ class WorkController extends Controller
             'type_id' => 'required',
             'start' => 'required',
             'end' => 'required',
+            'file' => 'image'
         ]);
 
         $work->update($request->all());
@@ -148,5 +150,9 @@ class WorkController extends Controller
     public function destroy(Work $work)
     {
         //
+    }
+
+    public function requirements(Work $work){
+        return view('entrevistador.works.requeriments', compact('work'));
     }
 }

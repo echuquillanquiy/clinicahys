@@ -10,7 +10,7 @@ class Requirement extends Model
     use HasFactory;
     protected $fillable = ['name', 'work_id'];
 
-    public function works(){
+    public function work(){
         return $this->belongsTo(Work::class);
     }
 }

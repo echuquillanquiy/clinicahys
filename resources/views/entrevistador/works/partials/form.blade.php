@@ -84,6 +84,10 @@
 
     <div>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, aperiam beatae consequatur consequuntur eveniet fugiat fugit in ipsum itaque, magni nihil, nostrum provident quae quidem ratione recusandae rerum veniam veritatis.</p>
-        {!! Form::file('file', ['class' => 'w-full border border-2 p-2 mt-2', 'id' => 'file']) !!}
+        {!! Form::file('file', ['class' => 'w-full border border-2 p-2 mt-2' . ($errors->has('file') ? ' border-red-600' : ''), 'id' => 'file', 'accept' => 'image/*']) !!}
+
+        @error('file')
+            <strong class="text-xs text-red-600">{{ $message }}</strong>
+        @enderror
     </div>
 </div>
