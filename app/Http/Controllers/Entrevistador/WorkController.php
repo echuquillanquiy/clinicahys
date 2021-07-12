@@ -13,6 +13,13 @@ use Illuminate\Support\Facades\Storage;
 
 class WorkController extends Controller
 {
+
+    public function __construct(){
+        $this->middleware('can:Ver trabajos')->only('index');
+        $this->middleware('can:Crear trabajos')->only('create', 'store');
+        $this->middleware('can:Actualizar trabajos')->only('edit', 'update', 'requirements');
+        $this->middleware('can:Eliminar trabajos')->only('destroy');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -60,8 +67,6 @@ class WorkController extends Controller
 
         $work = Work::create($request->all());
 
-
-
         if ($request->file('file')){
             $url = Storage::put('public/works', $request->file('file'));
 
@@ -92,6 +97,8 @@ class WorkController extends Controller
      */
     public function edit(Work $work)
     {
+        $this->authorize('publicated', $work);
+
         $categories = Category::pluck('name', 'id');
         $places = Place::pluck('name', 'id');
         $types = Type::pluck('name', 'id');
@@ -108,6 +115,8 @@ class WorkController extends Controller
      */
     public function update(Request $request, Work $work)
     {
+        $this->authorize('publicated', $work);
+
         $request->validate([
             'title' => 'required',
             'slug' => 'required|unique:works,slug,' . $work->id,
@@ -153,6 +162,17 @@ class WorkController extends Controller
     }
 
     public function requirements(Work $work){
+
+        $this->authorize('publicated', $work);
+
         return view('entrevistador.works.requeriments', compact('work'));
+    }
+
+    public function status(Work $work){
+        $work->status = 2;
+        $work->save();
+
+
+        return redirect()->route('entrevistador.works.index');
     }
 }

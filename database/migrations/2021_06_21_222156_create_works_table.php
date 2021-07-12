@@ -21,7 +21,7 @@ class CreateWorksTable extends Migration
             $table->string('subtitle');
             $table->string('slug');
             $table->text('description');
-            $table->enum('status', [Work::BORRADOR, Work::PUBLICADO])->default(Work::PUBLICADO);
+            $table->enum('status', [Work::BORRADOR, Work::PUBLICADO])->default(Work::BORRADOR);
             $table->date('start');
             $table->date('end');
 

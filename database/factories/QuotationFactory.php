@@ -29,7 +29,8 @@ class QuotationFactory extends Factory
             'contact' => $this->faker->name(),
             'position' => $this->faker->randomElement(['GERENTE', 'ADMINISTRADOR(A)', 'GERENTE COMERCIAL', 'SECRETARIA']),
             'workers' => $this->faker->numberBetween(15, 100),
-            'positions' => $this->faker->word()
+            'positions' => $this->faker->sentence(10),
+            'status' => $this->faker->randomElement([Quotation::RECEPCIONADO, Quotation::ENVIADO])
         ];
     }
 }

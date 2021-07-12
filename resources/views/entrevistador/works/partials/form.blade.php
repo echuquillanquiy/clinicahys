@@ -63,7 +63,7 @@
 
     <div>
         {!! Form::label('end', 'Fecha fin') !!}
-        {!! Form::date('end', \Carbon\Carbon::now()->addDays(7), ['class' => 'block w-full mt-1 rounded-lg' . ($errors->has('end') ? ' border-red-600' : '')]) !!}
+        {!! Form::date('end', \Carbon\Carbon::now()->addDays(30), ['class' => 'block w-full mt-1 rounded-lg' . ($errors->has('end') ? ' border-red-600' : '')]) !!}
 
         @error('end')
         <strong class="text-xs text-red-600">{{ $message }}</strong>

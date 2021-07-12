@@ -1,8 +1,4 @@
-<x-entrevistador-layout>
-
-    <x-slot name="work">
-        {{ $work->slug }}
-    </x-slot>
+<x-entrevistador-layout :work="$work">
 
     <h1 class="text-2xl font-bold">INFORMACIÓN DE LA PUBLICACIÓN</h1>
     <hr class="mt-2 mb-6">

@@ -8,7 +8,7 @@
     @endisset
 
     <div class="card-body">
-        <h1 class="card-title">{{ Str::limit($work->title, 40) }}</h1>
+        <h1 class="card-title">{{ Str::limit($work->title, 19) }}</h1>
         <p class="text-gray-500 text-sm mb-2"><span class="font-bold">Tipo: </span> {{ $work->type->name }}</p>
         <p class="text-gray-500 text-sm mb-2"><span class="font-bold">Categoría: </span>{{ $work->category->name }}</p>
         <p class="text-gray-500 text-sm mb-2"><span class="font-bold">Sede: </span>{{ $work->place->name }}</p>

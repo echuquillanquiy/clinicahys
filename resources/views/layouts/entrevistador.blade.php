@@ -42,11 +42,25 @@
                                     Requisitos del trabajo
                                 </a>
                             </li>
-                            <li class="leading-7 mb-1 border-l-4 border-transparent pl-2">
-                                <a href="">
+                            <li class="leading-7 mb-1 border-l-4 @routeIs('entrevistador.works.applicants', $work) border-indigo-400 @else border-transparent @endif pl-2">
+                                <a href="{{ route('entrevistador.works.applicants', $work) }}">
                                     Postulantes
                                 </a>
                             </li>
+
+                            @if($work->status == 1)
+                                <div class="mt-8">
+                                    <form action="{{ route('entrevistador.works.status', $work) }}" method=POST>
+                                        @csrf
+
+                                        <button type="submit" class="btn btn-danger">PUBLICAR</button>
+                                    </form>
+                                </div>
+                            @else
+                                <div class="mt-8">
+                                    <a class="btn btn-primary">PUBLICADO</a>
+                                </div>
+                            @endif
                         </ul>
                     </aside>
 

@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Quotation;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -24,6 +25,7 @@ class CreateQuotationsTable extends Migration
             $table->string('position');
             $table->integer('workers');
             $table->string('positions');
+            $table->enum('status', [Quotation::RECEPCIONADO, Quotation::ENVIADO])->default(Quotation::RECEPCIONADO);
 
             $table->timestamps();
         });

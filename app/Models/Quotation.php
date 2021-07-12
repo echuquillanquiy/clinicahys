@@ -9,5 +9,8 @@ class Quotation extends Model
 {
     use HasFactory;
 
-    protected $guarded = ['id'];
+    const RECEPCIONADO = 1;
+    const ENVIADO = 2;
+
+    protected $guarded = ['id', 'status'];
 }

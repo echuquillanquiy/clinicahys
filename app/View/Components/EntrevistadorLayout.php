@@ -6,14 +6,15 @@ use Illuminate\View\Component;
 
 class EntrevistadorLayout extends Component
 {
+    public $work;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($work)
     {
-        //
+        $this->work = $work;
     }
 
     /**

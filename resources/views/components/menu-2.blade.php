@@ -12,18 +12,18 @@
         ],
         [
             'name' => 'Cotizaciones',
-            'route' => "#",
-            'active' => null
+            'route' => route('cotizaciones'),
+            'active' => request()->routeIs('cotizaciones')
         ],
-        [
+        /*[
             'name' => 'Programaciones',
             'route' => "#",
             'active' => null
-        ],
+        ],*/
         [
             'name' => 'Historia Online',
-            'route' => "#",
-            'active' => null
+            'route' => "http://clientes.clinicahys.com:8021",
+            'active' => null,
         ]
     ];
 @endphp

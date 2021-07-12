@@ -91,5 +91,4 @@
             {{ $works->links() }}
         </div>
     </x-table-responsive>
-
 </div>

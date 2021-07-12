@@ -51,6 +51,24 @@
                             </x-jet-dropdown-link>
                         @endcan
 
+                        @can('Ver trabajos')
+                            <x-jet-dropdown-link href="{{ route('services.index') }}">
+                                Servicios
+                            </x-jet-dropdown-link>
+                        @endcan
+
+                        @can('Ver trabajos')
+                            <x-jet-dropdown-link href="{{ route('places.index') }}">
+                                Sedes
+                            </x-jet-dropdown-link>
+                        @endcan
+
+                        @can('Ver trabajos')
+                            <x-jet-dropdown-link href="{{ route('quotations.index') }}">
+                                Cotizaciones
+                            </x-jet-dropdown-link>
+                        @endcan
+
                         <div class="border-t border-gray-100"></div>
 
                         <!-- Authentication -->

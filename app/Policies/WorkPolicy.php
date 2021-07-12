@@ -32,4 +32,13 @@ class WorkPolicy
             return false;
         }
     }
+
+    public function publicated(User $user, Work $work)
+    {
+        if ($work->user_id == $user->id){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }

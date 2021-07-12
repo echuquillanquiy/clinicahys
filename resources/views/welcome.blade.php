@@ -22,7 +22,7 @@
             @foreach($services as $service)
                 <article>
                     <figure>
-                        <img class="rounded-xl h- w-full object-cover" src="{{ Storage::url($service->image) }}" alt="">
+                        <img class="rounded-xl h-64 w-full object-cover object-center" src="{{ Storage::url($service->image) }}" alt="">
                     </figure>
 
                     <header class="mt-2">
@@ -31,7 +31,7 @@
                         </h1>
                     </header>
 
-                    <p class="text-md text-gray-500 mt-2">{{ Str::limit($service->description, 50) }}</p>
+                    <p class="text-md text-gray-500 mt-2">{!! Str::limit($service->description, 50) !!}</p>
                 </article>
             @endforeach
         </div>
