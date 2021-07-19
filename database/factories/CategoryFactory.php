@@ -22,7 +22,7 @@ class CategoryFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->word(),
+            'name' => $this->faker->randomElement(['ADMINISTRATIVOS', 'LOGISTICA', 'GERENCIA', 'ASISTENTES', 'RR.HH', 'COTIZACIONES', 'LIMPIEZA', 'OPERATIVO', 'ENFERMERIA', 'MEDICOS', 'TECNICOS', 'SOPORTE', 'MANTENIMIENTO']),
         ];
     }
 }

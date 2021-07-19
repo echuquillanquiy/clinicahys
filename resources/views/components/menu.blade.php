@@ -16,7 +16,7 @@
 </li>
 
 <li class="text-trueGray-500 hover:bg-sky-500 hover:text-white">
-    <a href="" class="py-2 px-4 text-md flex items-center">
+    <a href="{{ route('cotizaciones') }}" class="py-2 px-4 text-md flex items-center">
         <span class="flex justify-center w-9">
             <i class="fas fa-hand-holding-usd"></i>
         </span>
@@ -24,20 +24,31 @@
     </a>
 </li>
 
-<li class="text-trueGray-500 hover:bg-sky-500 hover:text-white">
+{{--<li class="text-trueGray-500 hover:bg-sky-500 hover:text-white">
     <a href="" class="py-2 px-4 text-md flex items-center">
         <span class="flex justify-center w-9">
             <i class="fas fa-clipboard-list"></i>
         </span>
         Programaciones
     </a>
-</li>
+</li>--}}
 
 <li class="text-trueGray-500 hover:bg-sky-500 hover:text-white">
-    <a href="" class="py-2 px-4 text-md flex items-center">
+    <a href="http://clientes.clinicahys.com:8021" class="py-2 px-4 text-md flex items-center" target="_blank">
         <span class="flex justify-center w-9">
             <i class="fas fa-file-medical"></i>
         </span>
         Historia Online
     </a>
 </li>
+
+@auth
+    <li class="text-trueGray-500 hover:bg-sky-500 hover:text-white">
+        <a href="{{ route('profiles.curriculum') }}" class="py-2 px-4 text-md flex items-center" target="_blank">
+            <span class="flex justify-center w-9">
+                <i class="fas fa-file"></i>
+            </span>
+            Curriculum
+        </a>
+    </li>
+@endauth

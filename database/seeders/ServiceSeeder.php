@@ -14,6 +14,43 @@ class ServiceSeeder extends Seeder
      */
     public function run()
     {
-        Service::factory(10)->create();
+        $services = [
+            [
+                'name' => 'AUDIOMETRIA'
+            ],
+            [
+                'name' => 'RADIOLOGIA DIGITAL'
+            ],
+            [
+                'name' => 'LABORATORIO CLINICO'
+            ],
+            [
+                'name' => 'EXAMEN FISICO'
+            ],
+            [
+                'name' => 'ERGONOMIA - MUSCULOESQUELETICO'
+            ],
+            [
+                'name' => 'OFTALMOLOGIA'
+            ],
+            [
+                'name' => 'ODONTOLOGIA'
+            ],
+            [
+                'name' => 'ELECTROCARDIOGRAMA'
+            ],
+            [
+                'name' => 'PSICOLOGIA'
+            ],
+            [
+                'name' => 'ESPIROMETRIA'
+            ],
+
+
+        ];
+
+        foreach ($services as $service){
+            Service::factory(1)->create($service);
+        }
     }
 }

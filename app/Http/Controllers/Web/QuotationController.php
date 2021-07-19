@@ -8,6 +8,9 @@ use Illuminate\Http\Request;
 
 class QuotationController extends Controller
 {
+    public function __construct(){
+        $this->middleware('can:Ver cotizaciones')->only('index', 'show');
+    }
     /**
      * Display a listing of the resource.
      *

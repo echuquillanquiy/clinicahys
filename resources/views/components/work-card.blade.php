@@ -21,7 +21,6 @@
             </p>
         </div>
 
-
         <a href="{{ route('works.show', $work) }}" class="block w-full text-center bg-red-500 text-white font-bold py-2 px-4 rounded" target="_blank">
             Más información
         </a>

@@ -5,10 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Resource extends Model
+class Profile extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['url', 'resourceable_id', 'resourceable_type'];
+    protected $guarded = ['id'];
 
+    public function user()
+    {
+        return $this->hasOne(User::class);
+    }
 }

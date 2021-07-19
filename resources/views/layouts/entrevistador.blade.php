@@ -27,7 +27,7 @@
             @livewire('navigation')
 
             <!-- Page Content -->
-                <div class="container py-8 grid grid-cols-5">
+                <div class="container-fluid py-4 grid grid-cols-6">
                     <aside>
                         <h1 class="font-bold text-lg mb-4">Edición de la publicación</h1>
 
@@ -64,7 +64,7 @@
                         </ul>
                     </aside>
 
-                    <div class="col-span-4 card">
+                    <div class="col-span-5 card">
                         <main class="card-body text-gray-600">
                             {{ $slot }}
                         </main>

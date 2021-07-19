@@ -3,7 +3,7 @@
         <div class="container py-32 h-full">
             <div class="w-full md:w-3/4 lg:w-1/2">
                 <h1 class="text-white text-6xl">
-                    H&S OCCUPATIONAL SAC
+                    H&S OCCUPATIONAL
                 </h1>
 
                 <p class="text-white text-3xl mt-4 mb-10">
@@ -18,21 +18,27 @@
     <section class="mt-8">
         <h1 class="text-trueGray-500 text-center text-4xl mb-6 font-bold">SERVICIOS</h1>
 
-        <div class="container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-6 gap-y-10">
+        <div class="container-fluid grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-6 gap-y-10">
             @foreach($services as $service)
-                <article>
-                    <figure>
-                        <img class="rounded-xl h-64 w-full object-cover object-center" src="{{ Storage::url($service->image) }}" alt="">
-                    </figure>
-
-                    <header class="mt-2">
-                        <h1 class="text-center text-xl text-gray-700">
-                            {{ Str::limit($service->name, 20) }}
-                        </h1>
-                    </header>
-
-                    <p class="text-md text-gray-500 mt-2">{!! Str::limit($service->description, 50) !!}</p>
-                </article>
+                <div class="card p-4 cursor-pointer">
+                    <div class="card-header">
+                        <figure>
+                            <img class="rounded-xl h-96 w-full object-cover object-center" src="{{ Storage::url($service->image) }}" alt="">
+                        </figure>
+                    </div>
+                    <div class="card-body">
+                        <article>
+                            <header class="mt-2">
+                                <h1 class="text-center text-2xl text-gray-700">
+                                    {{ Str::limit($service->name, 20) }}
+                                </h1>
+                            </header>
+                        </article>
+                     </div>
+                    <div class="card-footer">
+                        <p class="text-base text-gray-500 mt-2">{!! $service->description !!}</p>
+                    </div>
+                </div>
             @endforeach
         </div>
     </section>
@@ -40,25 +46,26 @@
     <section class="mt-8">
         <h1 class="text-trueGray-500 text-center text-4xl mb-6 2xl:font-bold">NUESTRAS SEDES</h1>
 
-        <div class="container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-8 text-center mb-8">
+        <div class="container-fluid grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-x-6 gap-y-8 text-center mb-8">
             @foreach($places as $place)
-                <article class="card">
-                    <figure class="border border-2 rounded-lg object-cover">
+                <article class="card p-4">
+                    <figure class="border border-2 rounded-lg h-96">
                         {!! $place->iframe !!}
                     </figure>
 
                     <div class="card-body">
                         <header class="card-title">
-                            <h1 class="text-xl text-blue-700 font-bold">
+                            <h1 class="text-4xl text-blue-700 font-bold">
                                 {{ $place->name }}
                             </h1>
                             <hr class="text-gray-600">
                         </header>
 
                         <div class="mt-2">
-                            <p class="text-xs text-gray-500 mb-2">{{ $place->address }}</p>
-                            <a class="text-sm text-gray-500" href="mailto:{{ $place->email }}">{{ $place->email }}</a>
-                            <a href="tel:+{{ $place->phone }}" class="text-sm text-gray-500"> - Cel: {{ $place->phone }}</a>
+                            <p class="text-2xl text-gray-500 mb-2">{{ $place->address }}</p>
+                            <a class="text-2xl text-blue-500" href="mailto:{{ $place->email }}">{{ $place->email }}</a>
+                            <br>
+                            <a href="tel:+{{ $place->phone }}" class="text-2xl text-gray-500">Cel: {{ $place->phone }}</a>
                         </div>
                     </div>
                 </article>

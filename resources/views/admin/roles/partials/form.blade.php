@@ -16,16 +16,13 @@
     <small class="text-danger">
         <strong>{{ $message }}</strong>
     </small>
-
 @enderror
 
 @foreach ($permissions as $permission)
-    
-    <div>
+    <div >
         <label>
             {!! Form::checkbox('permissions[]', $permission->id, null, ['class' => 'mr-1']) !!}
             {{ $permission->name }}
         </label>
     </div>
-
 @endforeach

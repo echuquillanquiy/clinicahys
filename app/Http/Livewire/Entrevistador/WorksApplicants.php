@@ -2,17 +2,21 @@
 
 namespace App\Http\Livewire\Entrevistador;
 
+use App\Models\User;
 use App\Models\Work;
+use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 
 use Livewire\WithPagination;
-
+use Livewire\WithFileUploads;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 class WorksApplicants extends Component
 {
     use AuthorizesRequests;
     use WithPagination;
+
+    use WithFileUploads;
 
     public $work, $search;
 

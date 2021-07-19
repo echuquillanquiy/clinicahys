@@ -61,5 +61,38 @@ class PermissionSeeder extends Seeder
         Permission::create([
             'name' => 'Editar usuarios'
         ]);
+
+        Permission::create([
+            'name' => 'Ver servicios'
+        ]);
+
+        Permission::create([
+            'name' => 'Crear servicios'
+        ]);
+
+        Permission::create([
+            'name' => 'Editar servicios'
+        ]);
+
+        Permission::create([
+            'name' => 'Ver sedes'
+        ]);
+
+        Permission::create([
+            'name' => 'Crear sedes'
+        ]);
+
+        Permission::create([
+            'name' => 'Editar sedes'
+        ]);
+
+        Permission::create([
+            'name' => 'Eliminar sedes'
+        ]);
+
+        Permission::create([
+            'name' => 'Ver cotizaciones'
+        ]);
+
     }
 }

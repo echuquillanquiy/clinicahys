@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Place;
 use App\Models\Type;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 use App\Models\Work;

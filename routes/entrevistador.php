@@ -14,3 +14,4 @@ Route::get('works/{work}/requirements', [WorkController::class, 'requirements'])
 Route::get('works/{work}/applicants', WorksApplicants::class)->middleware('can:Actualizar trabajos')->name('works.applicants');
 
 Route::post('works/{work}/status', [WorkController::class, 'status'])->name('works.status');
+

@@ -39,6 +39,10 @@
                             Perfil
                         </x-jet-dropdown-link>
 
+                        <x-jet-dropdown-link href="{{ route('profiles.curriculum') }}">
+                            Curriculum
+                        </x-jet-dropdown-link>
+
                         @can('Ver trabajos')
                             <x-jet-dropdown-link href="{{ route('entrevistador.works.index') }}">
                                 Entrevistador
@@ -51,19 +55,19 @@
                             </x-jet-dropdown-link>
                         @endcan
 
-                        @can('Ver trabajos')
+                        @can('Ver servicios')
                             <x-jet-dropdown-link href="{{ route('services.index') }}">
                                 Servicios
                             </x-jet-dropdown-link>
                         @endcan
 
-                        @can('Ver trabajos')
+                        @can('Ver sedes')
                             <x-jet-dropdown-link href="{{ route('places.index') }}">
                                 Sedes
                             </x-jet-dropdown-link>
                         @endcan
 
-                        @can('Ver trabajos')
+                        @can('Ver cotizaciones')
                             <x-jet-dropdown-link href="{{ route('quotations.index') }}">
                                 Cotizaciones
                             </x-jet-dropdown-link>
@@ -135,7 +139,7 @@
                                 </div>
 
                                 <div class="col-span-3">
-                                    <img class="h-full w-full object-cover object-center mb-6" src="{{$place->image}}" alt="">
+                                    <img class="h-full w-full object-cover object-center mb-6" src="{{  Storage::url($place->first()->image) }}" alt="">
                                 </div>
                             </div>
                         </div>
@@ -190,7 +194,7 @@
                         </div>
 
                         <div class="col-span-3">
-                            <img class="h-full w-full object-cover object-center" src="{{$place->first()->image}}" alt="">
+                            <img class="h-full w-full object-cover object-center" src="{{  Storage::url($place->first()->image) }}" alt="">
                         </div>
                     </div>
                 </div>

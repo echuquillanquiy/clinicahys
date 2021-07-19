@@ -9,6 +9,12 @@ use Illuminate\Support\Facades\Storage;
 
 class ServiceController extends Controller
 {
+
+    public function __construct(){
+        $this->middleware('can:Ver servicios')->only('index');
+        $this->middleware('can:Crear servicios')->only('create', 'store');
+        $this->middleware('can:Editar servicios')->only('edit', 'update');
+    }
     /**
      * Display a listing of the resource.
      *

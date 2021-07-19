@@ -51,7 +51,7 @@
 
             <section class="card">
                 <div class="card-body">
-                    <figure>
+                    <figure class="h-96 w-full">
                         {!! $work->place->iframe !!}
                     </figure>
                 </div>

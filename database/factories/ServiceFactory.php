@@ -22,8 +22,7 @@ class ServiceFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->sentence(),
-            'description' => $this->faker->paragraph(),
+            'description' => $this->faker->paragraph(3),
             'image' => 'services/' .$this->faker->image('public/storage/services', 640, 400, null, false),
         ];
     }

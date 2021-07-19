@@ -61,11 +61,6 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
 
-    public function resource()
-    {
-        return $this->morphOne(Resource::class, 'resourceable');
-    }
-
     //Relacion uno a muchos
     public function works_publicated(){
         return $this->hasMany(Work::class);
@@ -74,5 +69,10 @@ class User extends Authenticatable
     //Relacion muchos a muchos
     public function works_applied(){
         return $this->belongsToMany(Work::class);
+    }
+
+    public function profile_applicant()
+    {
+        return $this->hasOne(Profile::class, 'user_id');
     }
 }

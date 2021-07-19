@@ -2,11 +2,11 @@
     <section class="bg-cover" style="background-image: url({{ asset('img/cotizaciones/pexels-sora-shimazaki-5673488.jpg')}})">
         <div class="container py-32 h-full">
             <div class="w-full md:w-3/4 lg:w-1/2">
-                <h1 class="text-white text-6xl">
-                    H&S OCCUPATIONAL COTIZACIONES
+                <h1 class="text-emerald-400 text-6xl">
+                    COTIZACIONES
                 </h1>
 
-                <p class="text-white text-3xl mt-4 mb-10">
+                <p class="text-emerald-400 text-3xl mt-4 mb-10">
                     Solicite su cotización
                 </p>
             </div>
@@ -14,7 +14,7 @@
     </section>
 
     <section class="mt-4 container card">
-        <h1 class="text-trueGray-500 text-center text-4xl mb-6 font-bold">SOLICITE SU COTIZACIÓN RELLENANDO EL FORMULARIO</h1>
+        <h1 class="text-trueGray-500 text-center text-4xl mb-6 font-bold">SOLICITE SU COTIZACIÓN</h1>
         <hr class="text-gray-500">
 
         <div class="card-header">
@@ -26,7 +26,7 @@
         </div>
 
         <div class="mt-8">
-            {!! Form::open(['route' => 'cotizaciones.store']) !!}
+            {!! Form::open(['route' => 'cotizaciones.store', 'autocomplete' => 'off']) !!}
 
                 <div class="grid grid-cols-1 lg:grid-cols-4 gap-4">
                    <div>
@@ -101,7 +101,6 @@
                         @enderror
                     </div>
                 </div>
-
 
                 <div class="flex justify-end my-2">
                     {!! Form::submit('Enviar cotización', ['class' => 'btn btn-primary cursor-pointer']) !!}

@@ -56,5 +56,11 @@
                 </x-jet-button>
             </div>
         </form>
+
+        <div class="card mt-6">
+            <div class="card-body text-center text-orange-400">
+                <p>Al registrate no olvides rellenar tus datos en la opción curriculum.</p>
+            </div>
+        </div>
     </x-jet-authentication-card>
 </x-guest-layout>
