@@ -89,7 +89,7 @@ class UserController extends Controller
             'address' => 'required',
             'birthday' => 'required',
             'phone' => 'required',
-            'name_contact' => 'required',
+            'name_contact' => 'required|min:15',
             'phone_contact' => 'required',
             'file' => 'required|mimes:pdf|max:10000'
         ]);

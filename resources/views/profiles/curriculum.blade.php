@@ -66,7 +66,7 @@
 
                             <div>
                                 <span>N° de Celular</span>
-                                <input name="phone" type="text" class="rounded-lg w-full">
+                                <input name="phone" type="number" class="rounded-lg w-full">
 
                                 @error('phone')
                                     <small class="text-red-500">
@@ -76,7 +76,7 @@
                             </div>
 
                             <div>
-                                <span>Nombre de contacto</span>
+                                <span>Nombres y Apellidos de contacto</span>
                                 <input name="name_contact" type="text" class="rounded-lg w-full">
 
                                 @error('name_contact')
@@ -88,7 +88,7 @@
 
                             <div>
                                 <span>Telefono de contacto</span>
-                                <input name="phone_contact" type="text" class="rounded-lg w-full">
+                                <input name="phone_contact" type="number" class="rounded-lg w-full">
                                 @error('phone_contact')
                                     <small class="text-red-500">
                                         <strong>{{ $message }}</strong>
